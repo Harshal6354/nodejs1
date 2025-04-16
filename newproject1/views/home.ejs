@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #url {
+        color: blue;
+
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="url">URL shortner</h2>
+
+    <% if (locals.id) {%>
+    <p>url Generated:http://localhost:8000/url/<%=id %></p>
+    <% } %>
+    <div class="form">
+      <form method="post" action="/url">
+        <label for="">Enter your url</label>
+        <input type="text" name="url" placeholder="type your url" />
+        <button type="submit">submit</button>
+      </form>
+    </div>
+  </body>
+</html>

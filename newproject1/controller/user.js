@@ -22,7 +22,7 @@ async function handleUserlogin(req, res) {
   // setuser(sessionid, existingUSer);
   // res.cookie("uid", sessionid);
   const token = setuser(existingUSer);
-  res.cookie("uid", token);
+  res.cookie("token", token);
 
   return res.render("home");
 }

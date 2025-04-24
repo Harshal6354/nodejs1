@@ -1,6 +1,7 @@
 // const logindata = require("../model/login");
 const Signupdata = require("../model/signup");
 
+//login fun
 async function LoginData(req, res) {
   try {
     const result = await Signupdata.findAll();
@@ -10,7 +11,7 @@ async function LoginData(req, res) {
     res.status(500).json({ error: "something wrong" });
   }
 }
-
+//signUp fun
 async function SignUpData(req, res) {
   try {
     const { username, email, password } = req.body;
@@ -24,6 +25,7 @@ async function SignUpData(req, res) {
   }
 }
 
+//delete fun
 async function Deletedata(req, res) {
   const { id } = req.params;
   const result = await Signupdata.destroy({ where: { id } });
@@ -34,4 +36,6 @@ async function Deletedata(req, res) {
 
   res.status(200).json({ message: "delete success", result });
 }
+
+async function updateData(req, res) {}
 module.exports = { LoginData, SignUpData, Deletedata };

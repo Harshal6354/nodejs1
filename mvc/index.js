@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const userRouter = require("./routes/user");
 const { connectiondb } = require("./connection");
 const mongoose = require("mongoose");

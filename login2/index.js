@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
@@ -5,7 +6,9 @@ const router3bus = require("./routes/bus");
 const router4 = require("./routes/faq");
 const app = express();
 const bodyParser = require("body-parser");
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+const MONGO_URL =
+  "mongodb+srv://harshaldhanavade:Harshal%402003@harshal100.uj40c.mongodb.net/busbooking";
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 const router = require("./routes/app");
@@ -17,9 +20,7 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve("./views/partials"));
 app.use(bodyParser.json());
 
-connection(
-  "mongodb+srv://harshaldhanavade:Harshal%402003@harshal100.uj40c.mongodb.net/busbooking"
-)
+connection(process.env.MONGO_URL)
   .then((result) => {
     console.log("connected to server");
   })

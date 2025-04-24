@@ -15,7 +15,7 @@ const sequelize = new Sequelize("mydb2", "postgres", "Harshal@158", {
   host: "localhost",
   dialect: "postgres",
   port: 5432,
-  logging: false, // ✅ disables the verbose SQL logging
+  logging: false, //  disables the verbose SQL logging
 });
 
 sequelize

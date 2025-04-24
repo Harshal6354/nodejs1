@@ -8,6 +8,6 @@ const UserData = sequelize.define("student2", {
   password: Sequelize.STRING,
 });
 
-sequelize.sync({ force: true }); // Creates table if not exists
+sequelize.sync({ force: false, alter: true });
 
 module.exports = UserData;

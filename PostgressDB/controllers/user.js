@@ -1,4 +1,4 @@
-const pool = require("../db");
+const { message } = require("statuses");
 const UserData = require("../model/user");
 const userdata = async (req, res) => {
   try {
@@ -12,6 +12,7 @@ const userdata = async (req, res) => {
     res.status(500).json({ error: "Something went wrong" });
   }
 };
+
 async function getdata(req, res) {
   const data1 = await UserData.findAll();
   res.json({ message: "succesful", data1 });

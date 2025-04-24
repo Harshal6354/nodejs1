@@ -1,5 +1,6 @@
 const express = require("express");
 const router1 = require("./routes/user");
+const router_login_signUp = require("./routes/login-signup");
 const PORT = 8000;
 const app = express();
 
@@ -27,5 +28,6 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 app.use("/", router1);
+app.use("/", router_login_signUp);
 
 app.listen(PORT, () => console.log(`server start at ${PORT}`));
